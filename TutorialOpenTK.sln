@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticBatching", "StaticBatching\StaticBatching.csproj", "{50B35093-F2C7-4ACE-B17E-E66AF71B89ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{FF5D683E-F65C-47D2-B7AB-A6655D59D849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticBatchingnIstancedMatrices", "StaticBatchingnIstancedMatrices\StaticBatchingnIstancedMatrices.csproj", "{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50B35093-F2C7-4ACE-B17E-E66AF71B89ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B35093-F2C7-4ACE-B17E-E66AF71B89ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B35093-F2C7-4ACE-B17E-E66AF71B89ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B35093-F2C7-4ACE-B17E-E66AF71B89ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5D683E-F65C-47D2-B7AB-A6655D59D849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5D683E-F65C-47D2-B7AB-A6655D59D849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5D683E-F65C-47D2-B7AB-A6655D59D849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5D683E-F65C-47D2-B7AB-A6655D59D849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
