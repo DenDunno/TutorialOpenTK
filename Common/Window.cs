@@ -5,7 +5,7 @@ using OpenTK.Windowing.Desktop;
 
 public class Window : GameWindow
 {
-    public Window() : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = new Vector2i(480, 445) })
+    public Window() : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = new Vector2i(486, 486) })
     {
     }
 

@@ -4,7 +4,7 @@ public class InstancedMatricesExample : IExample
 {
     private RenderingObject _view = null!;
     private AnimatedGrid _animatedGrid = null!;
-    private readonly int _elementsCount = 15;
+    private readonly int _elementsCount = 8;
     private readonly float _offset = 0.08f;
     
     public void Initialize()
