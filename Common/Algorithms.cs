@@ -22,15 +22,30 @@ public static class Algorithms
     {
         return Random.Shared.Next(0, 2) == 0 ? 1 : -1;
     }
+
+    public static Vector3 RandomVector3(float start, float end)
+    {
+        return new Vector3(RandomUnsigned(start, end), RandomUnsigned(start, end), RandomUnsigned(start, end));
+    }
     
-    public static float RandomSigned(float start, float end)
+    public static float RandomUnsigned(float start, float end)
     {
         if (end <= start)
             throw new Exception("Start greater end in RandomSigned");
         
         float length = end - start;
-        
-        return (Random.Shared.NextSingle() * length + start) * RandomSign();
+
+        return Random.Shared.NextSingle() * length + start;
+    }
+    
+    public static float RandomSigned(float start, float end)
+    {
+        return RandomUnsigned(start, end) * RandomSign();
+    }
+
+    public static float Uniform()
+    {
+        return Random.Shared.NextSingle();
     }
     
     public static float Lerp(float firstFloat, float secondFloat, float lerp)

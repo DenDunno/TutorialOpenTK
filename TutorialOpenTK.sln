@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticBatchingnIstancedMatrices", "StaticBatchingnIstancedMatrices\StaticBatchingnIstancedMatrices.csproj", "{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicBatching", "DynamicBatching\DynamicBatching.csproj", "{C23B8BB7-C1DD-4658-95DD-2C318AF2DF6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C60C0E5B-E57B-47C3-9802-6456BBB1CB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23B8BB7-C1DD-4658-95DD-2C318AF2DF6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23B8BB7-C1DD-4658-95DD-2C318AF2DF6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23B8BB7-C1DD-4658-95DD-2C318AF2DF6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23B8BB7-C1DD-4658-95DD-2C318AF2DF6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

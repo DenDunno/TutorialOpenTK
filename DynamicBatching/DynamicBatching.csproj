@@ -12,11 +12,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\Resources\StaticBatchingInstancedMatrices\frag.glsl">
-        <Link>StaticBatchingInstancedMatrices\frag.glsl</Link>
+      <Content Include="..\Resources\DynamicBatching\frag.glsl">
+        <Link>DynamicBatching\frag.glsl</Link>
       </Content>
-      <Content Include="..\Resources\StaticBatchingInstancedMatrices\vert.glsl">
-        <Link>StaticBatchingInstancedMatrices\vert.glsl</Link>
+      <Content Include="..\Resources\DynamicBatching\vert.glsl">
+        <Link>DynamicBatching\vert.glsl</Link>
       </Content>
     </ItemGroup>
 

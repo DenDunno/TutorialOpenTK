@@ -1,0 +1,2 @@
+﻿
+Tutorial.RunExample(new DynamicBatchingExample());

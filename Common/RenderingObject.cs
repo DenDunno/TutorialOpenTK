@@ -3,42 +3,46 @@
 public class RenderingObject
 {
     public readonly int ShaderProgramId;
-    private int _vertexArrayId;
-    private int _vertexBufferId;
-    private int _indexBufferId;
-    private readonly Mesh _mesh;
-
-    public RenderingObject(Mesh mesh, string vertexShader, string fragmentShader)
-    {
-        _mesh = mesh;
-        ShaderProgramId = ShaderProgram.Create(vertexShader, fragmentShader);
-        BufferData();
-    }
+    private readonly int _vertexArrayId;
+    private readonly int _vertexBufferId;
+    private readonly int _indexBufferId;
+    private int _indicesCount;
     
-    private void BufferData()
+    public RenderingObject(string vertexShader, string fragmentShader) : this(ShaderProgram.Create(vertexShader, fragmentShader))
     {
+    }
+
+    private RenderingObject(int shaderProgramId)
+    {
+        ShaderProgramId = shaderProgramId;
         _vertexArrayId = GL.GenVertexArray();
-        GL.BindVertexArray(_vertexArrayId);
-
         _vertexBufferId = GL.GenBuffer();
-        GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferId);
-        GL.BufferData(BufferTarget.ArrayBuffer, _mesh.Vertices.Count * sizeof(float), _mesh.Vertices.ToArray(), BufferUsageHint.StaticDraw);
-
         _indexBufferId = GL.GenBuffer();
-        GL.BindBuffer(BufferTarget.ElementArrayBuffer, _indexBufferId);
-        GL.BufferData(BufferTarget.ElementArrayBuffer, _mesh.Indices.Count * sizeof(uint), _mesh.Indices.ToArray(), BufferUsageHint.StaticDraw);
+    }
 
-        foreach (VertexAttribute attribute in _mesh.Attributes)
+    public void BufferData(Mesh mesh, BufferUsageHint usageHint = BufferUsageHint.StaticDraw)
+    {
+        _indicesCount = mesh.Indices.Count;
+        
+        GL.BindVertexArray(_vertexArrayId);
+        
+        GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferId);
+        GL.BufferData(BufferTarget.ArrayBuffer, mesh.Vertices.Count * sizeof(float), mesh.Vertices.Items, usageHint);
+
+        GL.BindBuffer(BufferTarget.ElementArrayBuffer, _indexBufferId);
+        GL.BufferData(BufferTarget.ElementArrayBuffer, mesh.Indices.Count * sizeof(uint), mesh.Indices.Items, usageHint);
+
+        foreach (VertexAttribute attribute in mesh.Attributes)
         {
             GL.VertexAttribPointer(attribute.Index, attribute.Size, VertexAttribPointerType.Float, false, attribute.Stride, attribute.Offset);
             GL.EnableVertexAttribArray(attribute.Index);
         }
     }
-    
+
     public void Draw()
     {
         GL.BindVertexArray(_vertexArrayId);
         GL.UseProgram(ShaderProgramId);
-        GL.DrawElements(PrimitiveType.Triangles, _mesh.Indices.Count, DrawElementsType.UnsignedInt, 0);
+        GL.DrawElements(PrimitiveType.Triangles, _indicesCount, DrawElementsType.UnsignedInt, 0);
     }
 }

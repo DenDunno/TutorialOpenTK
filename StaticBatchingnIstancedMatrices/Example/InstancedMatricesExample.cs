@@ -10,7 +10,8 @@ public class InstancedMatricesExample : IExample
     public void Initialize()
     {
         Mesh mesh = new MeshGeneration(_elementsCount, _offset).Build();
-        _view = new RenderingObject(mesh, "StaticBatchingInstancedMatrices/vert", "StaticBatchingInstancedMatrices/frag");
+        _view = new RenderingObject("StaticBatchingInstancedMatrices/vert", "StaticBatchingInstancedMatrices/frag");
+        _view.BufferData(mesh);
         _animatedGrid = new AnimatedGrid(_view.ShaderProgramId, _elementsCount, _offset);
         _animatedGrid.SetColorsToShader();
     }

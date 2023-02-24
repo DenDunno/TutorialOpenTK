@@ -11,8 +11,9 @@ public class GridView
 
     public RenderingObject Build()
     {
+        RenderingObject renderingObject = new("StaticBatching/vert", "StaticBatching/frag");
         Mesh mesh = _meshGeneration.Build();
-        RenderingObject renderingObject = new(mesh, "StaticBatching/vert", "StaticBatching/frag");
+        renderingObject.BufferData(mesh);
 
         int countIndex = GL.GetUniformLocation(renderingObject.ShaderProgramId, "colorsCount");
         int colorsIndex = GL.GetUniformLocation(renderingObject.ShaderProgramId, "colors");

@@ -2,29 +2,36 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>TutorialOpenTK</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="OpenTK" Version="4.7.5" />
+      <PackageReference Include="OpenTK" Version="4.7.7" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\Resources\StaticBatching\frag.glsl">
-        <Link>StaticBatching\frag.glsl</Link>
-      </Content>
       <Content Include="..\Resources\StaticBatching\vert.glsl">
         <Link>StaticBatching\vert.glsl</Link>
       </Content>
-      <Content Include="bin\Debug\net7.0\frag.glsl" />
-      <Content Include="bin\Debug\net7.0\vert.glsl" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Common\Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="bin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="bin\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="bin\**" />
     </ItemGroup>
 
 </Project>

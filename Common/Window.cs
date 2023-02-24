@@ -5,8 +5,21 @@ using OpenTK.Windowing.Desktop;
 
 public class Window : GameWindow
 {
-    public Window() : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = new Vector2i(486, 486) })
+    private readonly FPSCounter _fpsCounter = new();
+    
+    public Window() : base(GameWindowSettings.Default, new NativeWindowSettings()
     {
+        Vsync = VSyncMode.Adaptive, 
+        Size = new Vector2i(480, 480)
+    })
+    {
+    }
+
+    protected override void OnUpdateFrame(FrameEventArgs args)
+    {
+        base.OnUpdateFrame(args);
+        
+        Title = $"FPS = {_fpsCounter.Update((float)args.Time)}";
     }
 
     protected override void OnRenderFrame(FrameEventArgs args)
